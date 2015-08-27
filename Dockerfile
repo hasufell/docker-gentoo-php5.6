@@ -33,6 +33,8 @@ RUN etc-update --automode -5
 # supervisor config
 COPY ./supervisord.conf /etc/supervisord.conf
 
+# create common group to be able to synchronize permissions to shared data volumes
+RUN groupadd -g 777 www
 
 EXPOSE 9000
 

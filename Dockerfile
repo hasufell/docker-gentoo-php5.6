@@ -16,7 +16,7 @@ RUN chgrp paludisbuild /dev/tty && cave resolve -c world -x
 # per-package USE flags
 # check these with "cave show <package-name>"
 RUN mkdir /etc/paludis/use.conf.d && echo -e "\
-\ndev-lang/php:5.6 cgi cli curl fpm gmp imap mysql mysqli zip \
+\ndev-lang/php:5.6 cgi cli curl exif fpm gd gmp imap mysql mysqli zip \
 \napp-eselect/eselect-php fpm \
 " \
 	>> /etc/paludis/use.conf.d/php.conf

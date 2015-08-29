@@ -1,4 +1,4 @@
-FROM        hasufell/gentoo-amd64-paludis:latest
+FROM        hasufell/gentoo-amd64-paludis:20150820
 MAINTAINER  Julian Ospald <hasufell@gentoo.org>
 
 # global USE flags

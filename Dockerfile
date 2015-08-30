@@ -7,6 +7,8 @@ zlib pam ssl sasl bzip2 urandom crypt tcpd \
 -acpi -cairo -consolekit -cups -dbus -dri -gnome -gnutls -gtk -gtk2 -gtk3 \
 -ogg -opengl -pdf -policykit -qt3support -qt5 -qt4 -sdl -sound -systemd \
 -truetype -vim -vim-syntax -wayland -X \
+\n \
+\n*/* PHP_TARGETS: -* php5-6 \
 " \
 	>> /etc/paludis/use.conf
 

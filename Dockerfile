@@ -33,6 +33,11 @@ RUN etc-update --automode -5
 # supervisor config
 COPY ./supervisord.conf /etc/supervisord.conf
 
+# allow easy config file additions to php-fpm.conf
+RUN mkdir /etc/php/fpm-php5.6/fpm.d/ && \
+	echo "include=/etc/php/fpm-php5.6/fpm.d/*.conf" \
+	>> /etc/php/fpm-php5.6/php-fpm.conf
+
 # create common group to be able to synchronize permissions to shared data volumes
 RUN groupadd -g 777 www
 

@@ -45,4 +45,4 @@ RUN groupadd -g 777 www
 
 EXPOSE 9000
 
-CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisord.conf"]
+CMD exec /usr/bin/supervisord -n -c /etc/supervisord.conf

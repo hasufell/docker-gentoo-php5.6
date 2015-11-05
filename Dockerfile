@@ -1,4 +1,4 @@
-FROM        hasufell/gentoo-amd64-paludis:latest
+FROM        hasufell/gentoo-nginx:latest
 MAINTAINER  Julian Ospald <hasufell@gentoo.org>
 
 
@@ -22,9 +22,6 @@ RUN chgrp paludisbuild /dev/tty && cave resolve -c world -x
 RUN chgrp paludisbuild /dev/tty && cave resolve -c tools -x
 RUN chgrp paludisbuild /dev/tty && cave resolve -c php -x
 
-# # update etc files... hope this doesn't screw up
-RUN etc-update --automode -5
-
 # ################################
 
 
@@ -35,9 +32,6 @@ COPY ./config/supervisord.conf /etc/supervisord.conf
 RUN mkdir /etc/php/fpm-php5.6/fpm.d/ && \
 	echo "include=/etc/php/fpm-php5.6/fpm.d/*.conf" \
 	>> /etc/php/fpm-php5.6/php-fpm.conf
-
-# create common group to be able to synchronize permissions to shared data volumes
-RUN groupadd -g 777 www
 
 EXPOSE 9000
 

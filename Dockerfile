@@ -8,9 +8,9 @@ MAINTAINER  Julian Ospald <hasufell@gentoo.org>
 COPY ./config/paludis /etc/paludis
 
 # clone our php overlay
-RUN git clone --depth=1 https://github.com/hasufell/php-overlay.git \
-	/var/db/paludis/repositories/php-overlay && chgrp paludisbuild /dev/tty \
-	&& cave sync php-overlay
+RUN git clone --depth=1 https://github.com/MOSAIKSoftware/mosaik-overlay.git \
+	/var/db/paludis/repositories/mosaik-overlay && chgrp paludisbuild /dev/tty \
+	&& cave sync mosaik-overlay
 
 # fetch jobs
 RUN chgrp paludisbuild /dev/tty && cave resolve -c world -x -f
